@@ -11,7 +11,7 @@ $platform = $_GET["platform"] ?? "pc";
 header("Access-Control-Allow-Origin: *");
 
 if (empty($_GET["account"])
-	&& array_key_exists($platform, $platform_api)
+	|| !array_key_exists($platform, $platform_api)
 	)
 {
 	http_response_code(400);
