@@ -4,6 +4,7 @@ $platform_api = [
 	"ps4" => "content-ps4.warframe.com",
 	"xb1" => "content-xb1.warframe.com",
 	"swi" => "content-swi.warframe.com",
+	"mob" => "content-mob.warframe.com",
 ];
 
 $platform = $_GET["platform"] ?? "pc";

@@ -9,10 +9,11 @@ curl_setopt_array($ch, [
 $response = curl_exec($ch);
 curl_close($ch);
 
-if (substr($response, 0, 18) == "Retry PC account: ")
+// https://content-mob.warframe.com/dynamic/getProfileViewingData.php?n=felfuri
+if (substr($response, 0, 23) == "Retry with PC account: ")
 {
 	$platform = "pc";
-	$response = file_get_contents("https://".$platform_api["pc"]."/dynamic/getProfileViewingData.php?n=".substr($response, 18));
+	$response = file_get_contents("https://".$platform_api["pc"]."/dynamic/getProfileViewingData.php?n=".substr($response, 48));
 }
 
 header("Content-Type: application/json");
